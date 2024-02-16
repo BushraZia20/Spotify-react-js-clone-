@@ -6,7 +6,7 @@ import { json } from "react-router-dom";
 
 function AlbumTracks() {
   const [tracks, setTracks] = useState([]);
-  const ids = localStorage.getItem("albumIds ");
+  const ids = localStorage.getItem("albumIds");
 
   useEffect(() => {
     const fetchData = async () => {

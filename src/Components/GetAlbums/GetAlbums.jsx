@@ -30,18 +30,18 @@ function GetAlbums() {
           setAlbums(result.albums.items || []);
 
           // console.log(typeof parts);
+          const uri = result.albums.items.map((album) => {
+            const parts = album.data.uri.split(":");
+            const albumId = parts[2];
+            console.log(albumId);
+            // console.log(typeof parts);
+          });
 
           // localStorage.setItem("albumIds", JSON.stringify(albumId));
 
           // setStoredId(albumId);
           // console.log("storedId", storedId);
         }
-        const uri = albums.map((album) => {
-          const parts = album.data.uri.split(":");
-          const albumId = parts[2];
-          console.log(albumId);
-          // console.log(typeof parts);
-        });
       } catch (error) {
         console.error(error);
       }
