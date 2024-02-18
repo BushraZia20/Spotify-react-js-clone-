@@ -37,6 +37,7 @@ module.exports = {
       },
       boxShadow: {
         "5px-4px-11px-black": "5px 4px 11px black",
+        "2px-2px-5px-black": "2px 2px 5px black",
       },
     },
   },

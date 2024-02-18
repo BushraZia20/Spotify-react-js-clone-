@@ -7,11 +7,12 @@ function GetAlbums() {
   const apiKey = key;
   const [albums, setAlbums] = useState([]);
   const [isHovered, setIsHovered] = useState(null);
+  const [fetchCount, setFetchCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       const url =
-        "https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=50";
+        "https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=100&numberOfTopResults=50";
       const options = {
         method: "GET",
         headers: {
@@ -27,6 +28,7 @@ function GetAlbums() {
           const result = await response.json();
           console.log(result);
           setAlbums(result.albums.items || []);
+          setFetchCount((prevCount) => prevCount + 1);
         }
       } catch (error) {
         console.error(error);
@@ -37,6 +39,7 @@ function GetAlbums() {
   return (
     <div className="albums h-75vh shadow-lg w-67rem p-2 overflow-y-scroll ">
       <div className="grid grid-cols-5 gap-[27px] ">
+        {/* <p>API fetch count: {fetchCount}</p> */}
         {albums.map((album, index) => {
           const albumId = album.data.uri.split(":")[2];
           // console.log(albumId);
