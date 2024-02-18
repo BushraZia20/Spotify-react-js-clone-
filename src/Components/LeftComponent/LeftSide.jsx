@@ -1,5 +1,5 @@
 import React from "react";
-// import "./LeftSide.css";
+import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import Library from "../../Assets/library.svg";
@@ -10,11 +10,11 @@ function LeftSide() {
   return (
     <div className="whole-left p-3 h-screen w-28 flex flex-col justify-start gap-3 bg-black text-white">
       <div className="upper-left rounded-[10px] flex flex-col justify-center gap-[6px] bg-121212">
-        <div className="home flex m-[10px]">
+        <Link to="/" className="home flex m-[10px]">
           {/* <img src="" alt="" /> */}
           <HomeIcon className="mr-[15px]" />
           <h3>Home</h3>
-        </div>
+        </Link>
 
         <div className="search flex m-[10px]">
           <SearchIcon className="mr-[15px]" />
