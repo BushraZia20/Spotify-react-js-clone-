@@ -80,6 +80,7 @@ function AlbumTracks() {
   const apiKey = key;
   const { albumId } = useParams();
   const [albumData, setAlbumData] = useState([]);
+  const [albumImage, setAlbumImage] = useState(null);
   const [tracks, setTracks] = useState([]);
 
   const [fetchCount, setFetchCount] = useState(0); // initialise a fetch counter
@@ -102,7 +103,11 @@ function AlbumTracks() {
         if (response.ok) {
           const result = await response.json();
           console.log(result);
-          setAlbumData(result.albums || []);
+          setAlbumData(result.albums[0] || []);
+          const images = result.albums[0].images;
+          if (images && images.length > 0) {
+            setAlbumImage(images[0].url);
+          }
         }
       } catch (error) {
         console.error(error);
@@ -111,8 +116,9 @@ function AlbumTracks() {
     fetchGetAlbums();
   }, []);
 
-  const image = albumData.albums[0].images[0];
-  const img_url = image.url;
+  // const image = albumData.images[0];
+  // const img_url = image.url;
+  // const date = albumData.release_date.split("-")[0];
 
   useEffect(() => {
     const fetchAlbumTracks = async () => {
@@ -147,9 +153,17 @@ function AlbumTracks() {
       <div className="flex flex-col items-center gap-[20px] bg-121212 my-3 rounded-[8px] w-71.4vw p-3 ">
         <Navbar />
 
-        <div className="h-20">
-          <img src={img_url} alt="" />
-          <p>{albumData.album_type}</p>
+        <div className=" border-2 border-green flex w-full gap-[20px] text-white">
+          <img className="h-[235px] rounded-[6px]" src={albumImage} alt="" />
+          <div>
+            <p>{albumData.album_type}</p>
+            <h1>{albumData.name}</h1>
+            <div>
+              <h6>{albumData.artists[0]?.name || null}</h6>
+              <h6>.{albumData.release_date.split("-")[0]}</h6>
+              <h6>.{albumData.total_tracks} songs</h6>
+            </div>
+          </div>
         </div>
 
         <div className=" w-full border-2 border-green">

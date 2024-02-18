@@ -35,6 +35,9 @@ module.exports = {
       margin: {
         "38rem": "38rem",
       },
+      boxShadow: {
+        "5px-4px-11px-black": "5px 4px 11px black",
+      },
     },
   },
   plugins: [],
