@@ -8,7 +8,7 @@ import ListIcon from "@mui/icons-material/List";
 
 function LeftSide() {
   return (
-    <div className="whole-left p-3 h-screen w-28 flex flex-col justify-start gap-3 bg-black text-white">
+    <div className="whole-left p-3 w-28 flex flex-col justify-start gap-3 bg-black text-white">
       <div className="upper-left rounded-[10px] flex flex-col justify-center gap-[6px] bg-121212">
         <Link to="/" className="home flex m-[10px]">
           {/* <img src="" alt="" /> */}

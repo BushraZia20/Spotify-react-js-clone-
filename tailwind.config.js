@@ -24,12 +24,12 @@ module.exports = {
       width: {
         28: "28vw",
         70: "70vw",
-        "71.4vw": "71.4vw",
+        "70vw": "70vw",
         "67rem": "67rem",
         "98%": "98%",
       },
       height: {
-        "75vh": "75vh",
+        "65vh": "65vh",
         "12rem": "12rem",
       },
       margin: {

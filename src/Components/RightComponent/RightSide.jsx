@@ -7,7 +7,7 @@ import GetAlbums from "../GetAlbums/GetAlbums";
 function RightSide() {
   return (
     // M A I N - D I V
-    <div className="bg-121212 rounded-[8px] w-71.4vw my-3 p-3 flex flex-col gap-[15px]">
+    <div className="bg-121212 rounded-[8px] w-70vw my-3 p-3 flex flex-col gap-[15px] h-[86vh] ">
       {/* N A V - B A R */}
       <Navbar />
 

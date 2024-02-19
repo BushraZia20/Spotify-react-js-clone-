@@ -37,7 +37,7 @@ function GetAlbums() {
     fetchData();
   }, []);
   return (
-    <div className="albums h-75vh shadow-lg w-67rem p-2 overflow-y-scroll ">
+    <div className="albums h-65vh shadow-lg w-67rem p-2 overflow-y-scroll ">
       <div className="grid grid-cols-5 gap-[27px] ">
         {/* <p>API fetch count: {fetchCount}</p> */}
         {albums.map((album, index) => {
