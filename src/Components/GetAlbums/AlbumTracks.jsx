@@ -76,6 +76,7 @@ import Navbar from "../RightComponent/Navbar";
 import { useParams } from "react-router-dom";
 import { key } from "../Common/key";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import Player from "../PlayerComponent/Player";
 
 function AlbumTracks() {
   const apiKey = key;
@@ -145,9 +146,9 @@ function AlbumTracks() {
   }, []);
 
   return (
-    <div className="flex bg-black">
+    <div className="flex flex-wrap bg-black box-border">
       <LeftSide />
-      <div className="flex flex-col items-center gap-[20px] bg-121212 my-3 rounded-[8px] w-71.4vw p-3 ">
+      <div className="flex flex-col items-center gap-[20px] bg-121212 my-3 rounded-[8px] w-70vw p-3 h-[86vh] ">
         <Navbar />
 
         <div className="flex w-full gap-[20px] text-white">
@@ -174,7 +175,7 @@ function AlbumTracks() {
           </button>
         </div>
 
-        <div className=" w-full">
+        <div className=" w-full overflow-y-scroll">
           <p>API Fetch Count: {fetchCount}</p>
 
           <ol className="text-white">
@@ -192,6 +193,8 @@ function AlbumTracks() {
           </ol>
         </div>
       </div>
+
+      <Player />
     </div>
   );
 }
